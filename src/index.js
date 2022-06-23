@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './home/Home'
 import reportWebVitals from './reportWebVitals';
-import * as bootstrap from 'bootstrap';
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './products/Products';
 import NavBar from './nav/NavBar';

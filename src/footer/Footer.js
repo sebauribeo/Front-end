@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
     <div className='footer'>
-        <div className='container'>
+        <div className='container text-white'>
             <div className='row'>
                 <div className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3'>
                     <img src="https://storage.googleapis.com/liquidos-public/logo-footer_11zon.webp" class="logoFooter" alt="..."></img>
@@ -21,7 +21,7 @@ const Footer = () => {
                     <p>Holanda 099, Piso 3, Providencia</p>
                     <br></br>
                     <h2>Nuestras R.R.S.S.</h2>
-                    <ul>
+                    <ul className='rrss'>
                         <li><i class="bi bi-instagram"></i></li>
                         <li><i class="bi bi-meta"></i></li>
                         <li><i class="bi bi-twitter"></i></li>

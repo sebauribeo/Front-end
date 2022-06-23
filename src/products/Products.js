@@ -32,14 +32,14 @@ import './Products.css'
       <div className='container'>
         <div className='row'>
           {items.map(item => (
-          <div className="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center" key={item.id}>
+          <div className="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center mt-3" key={item.id}>
             <img src={item.imagen} className="card-img-top imagen" alt="..."></img>
             <div className="card-body">
               <h5 className="card-title">{item.nombre}</h5>
               <p className="card-text">{item.marca}</p>
               <p className="card-text">{item.detalle}</p>
               <h4 className="card-text">$ {item.precio}</h4>
-              <a className="btn btn-primary">Agregar al carrito</a>
+              <a className="btn btn-primary" href='/#'>Agregar al carrito</a>
             </div>
           </div>
           ),

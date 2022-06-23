@@ -4,9 +4,9 @@ import './Home.css'
 const Home = () => {
   return (
     <>
-    <div className='container  mt-5 mb-5'>
+    <div className='container  mt-5 mb-5 text-white'>
       <div className='row'>
-        <div id="carouselExampleIndicators" class="carousel slide col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" data-bs-ride="true">
+        <div id="carouselExampleIndicators" class="carousel slide col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 m-0 p-0" data-bs-ride="true">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -32,9 +32,15 @@ const Home = () => {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3'>
-
+        <div className='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 bg-dark text-center'>
+          <h1 className='mt-5'>Liquidos.cl</h1>
+          <h4 className='mt-4'>texto texto</h4>
+          <h4 className='mt-4'>texto texto</h4>
+          <h4 className='mt-4'>texto texto</h4>
         </div>
+      </div>
+      <div>
+      <img src="https://storage.googleapis.com/liquidos-public/banner_15_locales.jpg" class="w-100" alt="..."></img>
       </div>
 
     </div>
