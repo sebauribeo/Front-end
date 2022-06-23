@@ -1,0 +1,9 @@
+.logoFooter, .logoWebPay {
+    width: 100%;
+
+}
+.footer {
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+}
