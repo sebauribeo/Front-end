@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './products/Products';
 import NavBar from './nav/NavBar';
 import Footer from './footer/Footer';
+import Shoppingcart from './ShoppingCart/Shoppingcart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Routes >
         <Route path='/' element={<Home />}/>
         <Route path='/products' element={<Products />}/>
+        <Route path='/cart' element={<Shoppingcart />}/>
       </Routes>
     </BrowserRouter>
     <Footer />

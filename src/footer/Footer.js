@@ -22,14 +22,14 @@ const Footer = () => {
                     <br></br>
                     <h2>Nuestras R.R.S.S.</h2>
                     <ul className='rrss'>
-                        <li><i class="bi bi-instagram"></i></li>
-                        <li><i class="bi bi-meta"></i></li>
-                        <li><i class="bi bi-twitter"></i></li>
+                        <li><i className="bi bi-instagram"></i></li>
+                        <li><i className="bi bi-meta"></i></li>
+                        <li><i className="bi bi-twitter"></i></li>
                     </ul>
 
                 </div>
                 <div className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3'>
-                    <img src="https://storage.googleapis.com/liquidos-public/webpay-plus_11zon.webp" class="logoWebPay" alt="..."></img>
+                    <img src="https://storage.googleapis.com/liquidos-public/webpay-plus_11zon.webp" className="logoWebPay" alt="..."></img>
                 </div>
             </div>
         </div>
