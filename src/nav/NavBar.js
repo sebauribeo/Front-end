@@ -21,7 +21,7 @@ const NavBar = () => {
           <a className="navbar-brand" href="/">
             <img
               src="https://storage.googleapis.com/liquidos-public/logo-liquidos.webp"
-              class="imgNav"
+              className="imgNav"
               alt="..."
             ></img>
           </a>
@@ -57,7 +57,7 @@ const NavBar = () => {
                   className="btn btn-warning position-relative nav-link active bi bi-cart-fill"
                   href="/cart"
                 >
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     {value}
                   </span>
                 </a>

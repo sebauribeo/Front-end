@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='container text-white'>
             <div className='row'>
                 <div className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3'>
-                    <img src="https://storage.googleapis.com/liquidos-public/logo-footer_11zon.webp" class="logoFooter" alt="..."></img>
+                    <img src="https://storage.googleapis.com/liquidos-public/logo-footer_11zon.webp" className="logoFooter" alt="..."></img>
                 </div>
                 <div className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3'>
                     <h2>Mesa de ayuda</h2>
