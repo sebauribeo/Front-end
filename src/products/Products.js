@@ -46,11 +46,12 @@ const Products = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="row mt-5">
+      <div className="container mt-5">
+        <div className="row my-5">
           {products.map((item) => (
+            <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
             <div
-              className="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center my-2"
+              className="card text-center rounded-5 m-1"
               key={item.id}
             >
               <img
@@ -59,18 +60,21 @@ const Products = () => {
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">{item.nombre}</h5>
+                <h6 className="card-title">{item.nombre}</h6>
                 <p className="card-text">{item.marca}</p>
                 <p className="card-text">{item.detalle}</p>
                 <h4 className="card-text">$ {item.precio}</h4>
                 <button
-                  className="btn btn-success bi bi-cart-fill w-50"
+                  className="btn btn-success bi bi-cart4 fs-2 w-50 btn-outline-dark text-white"
                   value={item.id}
                   onClick={addShoppingCart}
                 ></button>
               </div>
             </div>
-          ))}
+              
+            </div>
+              
+              ))}
         </div>
       </div>
     </>

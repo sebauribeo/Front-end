@@ -39,22 +39,22 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active fs-4 mt-2" aria-current="page" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link active"
+                  className="nav-link active fs-4 mt-2"
                   aria-current="page"
                   href="/products"
                 >
                   Productos
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item cart">
                 <a
-                  className="btn btn-warning position-relative nav-link active bi bi-cart-fill"
+                  className="btn btn-light text-dark position-relative nav-link active bi bi-cart4 fs-3 rounded-4"
                   href="/cart"
                 >
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
