@@ -22,18 +22,20 @@ const Products = () => {
       confirmButtonText: "Ok",
       showLoaderOnConfirm: true,
       preConfirm: (cantidad) => {
+        console.log(cantidad);
         if (cantidad === "" || cantidad === "0") {
           Swal.showValidationMessage(`Debes escojer una cantidadmayor a 1`);
+        } else {
+          const value = parseInt(id.target.value);
+          const postcart = products.find((item) => item.id === value);
+          const body = {
+            nombre: postcart.nombre,
+            precio: postcart.precio,
+            cantidad: cantidad,
+            imagen: postcart.imagen,
+          };
+          axios.post("http://localhost:3001/shoppingCart/addProducts", body);
         }
-        const value = parseInt(id.target.value);
-        const postcart = products.find((item) => item.id === value);
-        const body = {
-          nombre: postcart.nombre,
-          precio: postcart.precio,
-          cantidad: cantidad,
-          imagen: postcart.imagen,
-        };
-        axios.post("http://localhost:3001/shoppingCart/addProducts", body);
       },
     }).then((result) => {
       if (result.isConfirmed) {
