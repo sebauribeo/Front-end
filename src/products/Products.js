@@ -14,26 +14,34 @@ const Products = () => {
 
   const addShoppingCart = async (id) => {
     Swal.fire({
-      icon: 'success',
-      title: 'Producto agregado al carro de compras',
-      showConfirmButton: false,
-      timer: 1000
-    })
-    const value = parseInt(id.target.value);
-    const postcart = products.find((item) => item.id === value);
-    const body = {
-      nombre: postcart.nombre,
-      precio: postcart.precio,
-      contador: 1,
-      imagen: postcart.imagen,
-    };
-    await axios.post("http://localhost:3001/shoppingCart/addProducts", body);
+      icon: "question",
+      title: "¿Cuantos productos deceas?",
+      input: "text",
+      inputPlaceholder: "Ingresa solo números enteros",
+      showCancelButton: true,
+      confirmButtonText: "Ok",
+      showLoaderOnConfirm: true,
+      preConfirm: (cantidad) => {
+        if (cantidad === "" || cantidad === "0") {
+          Swal.showValidationMessage(`Debes escojer una cantidadmayor a 1`);
+        }
+        const value = parseInt(id.target.value);
+        const postcart = products.find((item) => item.id === value);
+        const body = {
+          nombre: postcart.nombre,
+          precio: postcart.precio,
+          cantidad: cantidad,
+          imagen: postcart.imagen,
+        };
+        axios.post("http://localhost:3001/shoppingCart/addProducts", body);
+        console.log(body);
+      },
+    });
   };
 
   return (
     <>
       <div className="container">
-        
         <div className="row mt-5">
           {products.map((item) => (
             <div
@@ -51,11 +59,10 @@ const Products = () => {
                 <p className="card-text">{item.detalle}</p>
                 <h4 className="card-text">$ {item.precio}</h4>
                 <button
-                  className="btn btn-success bi bi-cart-fill w-50"                  
+                  className="btn btn-success bi bi-cart-fill w-50"
                   value={item.id}
                   onClick={addShoppingCart}
-                >
-                </button>
+                ></button>
               </div>
             </div>
           ))}

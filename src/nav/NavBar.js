@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const [number, setNumber] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/shoppingCart")
+      .then((res) => res.json())
+      .then((result) => {
+        setNumber(result.response);
+      });
+  }, []);
+
+  const value = number.length;
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -46,7 +57,7 @@ const NavBar = () => {
                   href="/cart"
                 >
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
+                    {value}
                   </span>
                 </a>
               </li>

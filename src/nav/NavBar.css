@@ -5,3 +5,7 @@
 .navbar {
     background-color: black;
 }
+
+.buttonNav {
+    width: 50px;
+}

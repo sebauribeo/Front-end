@@ -16,7 +16,7 @@ const Shoppingcart = () => {
       });
   }, []);
 
-  const price = cart.map((precio) => precio.precio);
+  const price = cart.map((precio) => precio.precio * precio.cantidad);
   const totalPrice = price.length > 0 ? price.reduce((a, b) => a + b) : "";
 
   const successfullyPayment = async () =>
@@ -30,7 +30,10 @@ const Shoppingcart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios.delete("http://localhost:3001/shoppingCart/successfullyPayment");
-        Swal.fire("Tu pago ha sido exitoso!").then((result) => {
+        Swal.fire({
+          title: "Tu pago ha sido exitoso!",
+          icon: "success",
+        }).then((result) => {
           if (result.isConfirmed) {
             navigate("/");
           }
@@ -55,7 +58,10 @@ const Shoppingcart = () => {
             id: body,
           },
         });
-        Swal.fire("Elemento borrado.").then((result) => {
+        Swal.fire({
+          title: "Elemento borrado.",
+          icon: "success",
+        }).then((result) => {
           if (result.isConfirmed) {
             window.location.reload();
           }
@@ -78,13 +84,13 @@ const Shoppingcart = () => {
                   <h3 className="bg-warning text-dark rounded-5">Nombre</h3>
                 </th>
                 <th scope="col">
-                  <h3 className="bg-warning text-dark rounded-5">Eliminar</h3>
-                </th>
-                <th scope="col">
                   <h3 className="bg-warning text-dark rounded-5">Cantidad</h3>
                 </th>
                 <th scope="col">
                   <h3 className="bg-warning text-dark rounded-5">Precio</h3>
+                </th>
+                <th scope="col">
+                  <h3 className="bg-warning text-dark rounded-5">Eliminar</h3>
                 </th>
               </tr>
             </thead>
@@ -95,9 +101,12 @@ const Shoppingcart = () => {
                     <img
                       src={cartProduct.imagen}
                       className="imagenCarrito"
+                      alt=""
                     ></img>
                   </td>
                   <td className="pt-5 h3">{cartProduct.nombre}</td>
+                  <td className="pt-5 h3">{cartProduct.cantidad}</td>
+                  <td className="pt-5 h3">{cartProduct.precio}</td>
                   <td className="pt-5 h3">
                     <button
                       className="btn btn-danger bi bi-trash3-fill trash"
@@ -105,14 +114,6 @@ const Shoppingcart = () => {
                       value={cartProduct.id}
                     ></button>
                   </td>
-
-                  <td className="pt-5 h3">
-                    {/* <button className="btn btn-primary">-</button> */}
-                    <h1 className="h1">1</h1>
-                    {/* <button className="btn btn-primary" onClick={increment}>+</button> */}
-                  </td>
-
-                  <td className="pt-5 h3">{cartProduct.precio}</td>
                 </tr>
               ))}
             </tbody>
@@ -123,7 +124,7 @@ const Shoppingcart = () => {
                   Precio Total:
                 </th>
                 <th scope="col" className="h1">
-                  {totalPrice}
+                  ${totalPrice}
                 </th>
               </tr>
             </thead>
