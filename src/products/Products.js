@@ -34,8 +34,11 @@ const Products = () => {
           imagen: postcart.imagen,
         };
         axios.post("http://localhost:3001/shoppingCart/addProducts", body);
-        console.log(body);
       },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
     });
   };
 

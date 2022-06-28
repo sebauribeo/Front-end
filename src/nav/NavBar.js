@@ -12,7 +12,8 @@ const NavBar = () => {
       });
   }, []);
 
-  const value = number.length;
+  let value = number ? number.length: 0;
+ 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark">

@@ -36,6 +36,8 @@ const Shoppingcart = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             navigate("/");
+            window.location.reload();
+
           }
         });
       }
