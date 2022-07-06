@@ -4,3 +4,19 @@
 .trash {
     font-size: 2rem;
 }
+
+.emptyCart {
+    width: 80vw;
+    height: 80vh;
+    margin: 20px;
+    background-color: black;
+    border-radius: 25px;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.549);
+    margin: 50px auto;
+}
+
+.emptyCartTitle{
+    padding-top: 20%;
+    color: white;
+    font-size: 3rem;
+}

@@ -78,14 +78,16 @@ const Shoppingcart = () => {
   if (!cart) {
     return (
       <>
-        <h1>iffff</h1>
+        <div className="emptyCart">
+          <h1 className="emptyCartTitle text-center">El Carro de compras esta vacio</h1>
+        </div>
       </>
     );
   } else {
     return (
       <>
         <div className="mt-5 text-center">
-          <h1 className="text-center">Carrito de compras</h1>
+          <h1 className="text-center text-white m-5">Carrito de compras</h1>
           <div className="container">
             <table className="table bg-white">
               <thead>

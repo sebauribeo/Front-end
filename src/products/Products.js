@@ -47,6 +47,7 @@ const Products = () => {
   return (
     <>
       <div className="container mt-5">
+      <h1 className="text-center text-white m-5">Productos</h1>
         <div className="row my-5">
           {products.map((item) => (
             <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
@@ -70,10 +71,8 @@ const Products = () => {
                   onClick={addShoppingCart}
                 ></button>
               </div>
+            </div>              
             </div>
-              
-            </div>
-              
               ))}
         </div>
       </div>
